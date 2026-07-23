@@ -35,18 +35,14 @@ public class Cliente
     public bool EhMaiorDeIdade()
     {
         DateOnly dataAtual = DateOnly.FromDateTime(DateTime.Now);
-        DateOnly  aniversarioEsteAno = new DateOnly(dataAtual.Year, DataNascimento.Month, DataNascimento.Day);
+        DateOnly aniversarioEsteAno = new DateOnly(dataAtual.Year, DataNascimento.Month, DataNascimento.Day);
 
         int idade = dataAtual.Year - DataNascimento.Year;
 
-        if (dataAtual < aniversarioEsteAno )
+        if (dataAtual < aniversarioEsteAno)
         {
             idade--;
         }
-        if (idade >= 18)
-        {
-            return true;
-        }
-        return false;
+        return idade >= 18;
     }
 }
